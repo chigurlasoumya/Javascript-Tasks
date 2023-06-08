@@ -1,0 +1,36 @@
+.calculator {
+  padding: 20px;
+  border-radius: 1em;
+  margin: auto;
+  height: 400px;
+  width: 420px;
+  background-color: pink;
+  box-shadow: 0px 8px 15px;
+}
+.display-input {
+  font-family: "Courier New", Courier, monospace;
+  background-color: whitesmoke;
+  border: solid black 0.5px;
+  color: black;
+  border-radius: 5px;
+  width: 90%;
+  height: 70%;
+}
+
+#btn {
+  background-color: #fb0066;
+}
+input[type="button"] {
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  color: black;
+  border: solid black 0.5px;
+  width: 60%;
+  border-radius: 5px;
+  height: 50%;
+  outline: none;
+}
+input:active[type="button"] {
+  background-color: #e5e5e5;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+}

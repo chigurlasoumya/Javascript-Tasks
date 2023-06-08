@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #cards-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      row-gap: 10px;
+    }
+  </style>
+  <body>
+    <div class="container" style="text-align: center">
+      <button
+        style="
+          background-color: blueviolet;
+          border: solid 1px;
+          border-radius: 15px;
+          padding: 10px;
+        "
+        onclick="fetchData()"
+      >
+        fetch All Data
+      </button>
+      <div id="cards-container"></div>
+    </div>
+
+    <script>
+      const result = document.getElementById("result");
+      const url = "https://jsonplaceholder.typicode.com/posts";
+      const cardsContainer = document.querySelector("#cards-container");
+      function fetchData() {
+        fetch(url)
+          .then((response) => response.json())
+          .then(function renderData(characters) {
+            characters.forEach((character) => {
+              const div = document.createElement("div");
+              const title = document.createElement("h1");
+              const body = document.createElement("p");
+
+              div.style.backgroundColor = "pink";
+              div.style.flexDirection = "center";
+              div.style.border = "1px solid black";
+              div.style.borderRadius = "15px";
+              div.style.margin = "30px";
+              title.style.fontSize = "20px";
+              body.style.fontSize = "10px";
+              cardsContainer.style.marginInline = "100px";
+
+              title.innerText = `${character.title}`;
+              body.innerText = `${character.body}`;
+              div.appendChild(title);
+              div.appendChild(body);
+              cardsContainer.appendChild(div);
+            });
+          });
+        // result.innerHTML += "id = " + data.id + "<br>";
+        //result.innerHTML += "title = " + data.title + "<br>";
+        //result.innerHTML += "body = " + data.body + "<br>";
+      }
+    </script>
+  </body>
+</html>

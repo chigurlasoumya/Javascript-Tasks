@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Mark Sheet out of each subject 100</h1>
+
+    English: <input type="text" id="first" /><br /><br />
+    Hindi: <input type="text" id="second" /><br /><br />
+    Science: <input type="text" id="third" /><br /><br />
+    Maths: <input type="text" id="fourth" /><br /><br />
+    Social: <input type="text" id="fifth" /><br /><br />
+    <input type="submit" value="submit" onclick="displaySum()" />
+
+    <script type="text/javascript">
+      function displaySum() {
+        const x1 = parseInt(document.getElementById("first").value);
+        const x2 = parseInt(document.getElementById("second").value);
+        const x3 = parseInt(document.getElementById("third").value);
+        const x4 = parseInt(document.getElementById("fourth").value);
+        const x5 = parseInt(document.getElementById("fifth").value);
+        const sum = x1 + x2 + x3 + x4 + x5;
+        const avg = sum / 5;
+        const Percentage = (sum / 500) * 100;
+        const alerttext = alert(
+          `Total marks is ${sum} And Percentage is ${Percentage}%`
+        );
+        if (avg >= 90) {
+          alert("Grade A");
+        } else if (avg >= 80) {
+          alert("Grade B");
+        } else if (avg >= 70) {
+          alert("Grade C");
+        } else {
+          alert("Low Grade");
+        }
+      }
+    </script>
+  </body>
+</html>

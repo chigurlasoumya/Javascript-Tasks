@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Array List</h1>
+    <input type="text" value="" id="inputType" />
+    <ul id="listContainer"></ul>
+    <input id="button" type="submit" value="Add" onclick="displayLists()" />
+    <!--ADDING JS-->
+    <script>
+      function displayLists() {
+        const inputEl = document.getElementById("inputType").value;
+        const ContainerEl = document.getElementById("listContainer");
+        const li = document.createElement("li");
+        const items = document.createTextNode(inputEl);
+        li.appendChild(items);
+        if (inputEl === "") {
+          alert("enter the text");
+        } else {
+          ContainerEl.appendChild(li);
+        }
+        document.getElementById("inputType").value = "";
+      }
+    </script>
+  </body>
+</html>
